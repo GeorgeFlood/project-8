@@ -5,6 +5,7 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
+const searchBar = document.querySelector('.search');
 
 fetch(urlAPI)
 .then(res => res.json())
@@ -22,6 +23,7 @@ let email = employee.email;
 let city = employee.location.city;
 let picture = employee.picture;
 
+
 employeeHTML += `
 <div class='card' data-index='${index}'>
 <img class='avatar' src='${picture.large}'>
@@ -37,7 +39,7 @@ employeeHTML += `
 }
 
 function displayModal(index){
-let {name, dob, phone, email, location: { city, street, state, postcode }, picture } = 
+let { name, dob, phone, email, location: { city, street, state, postcode }, picture } = 
 employees[index];
 
 let date = new Date(dob.date);
@@ -49,7 +51,7 @@ const modalHTML= `
 <p class='address'${city}</p>
 <hr>
 <p>${phone}</p>
-<p class='address'>${street}, ${state}, ${postcode}</p>
+<p class='address'>${street.name}, ${state}, ${postcode}</p>
 <p><i>Birthday:</i>
 ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
 </div>

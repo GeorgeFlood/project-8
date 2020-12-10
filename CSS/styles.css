@@ -337,13 +337,17 @@ template {
   margin-right: auto;
   font-size: 0.8rem; }
 
+.modal-content p {
+  padding-top: 5%; }
+
 @media (min-width: 768px) {
   .text-container {
     font-size: 1em; } }
-@media (min-width: 320px) {
-  header {
-    font-size: 1.2em;
-    text-align: center; } }
+header {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px; }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -391,5 +395,8 @@ template {
     grid-gap: 30px;
     width: 95%;
     margin: 0 auto; } }
+@media (min-width: 768px) {
+  .text-container {
+    font-size: 1em; } }
 
 /*# sourceMappingURL=styles.css.map */
